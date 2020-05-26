@@ -1,3 +1,6 @@
+root abc
+cst8213
+user8213
 !!Objectives
 !!To setup networking for the lab environment
 !!Lab Outcome
@@ -27,16 +30,45 @@ Disable the NetworkManager service.
 systemctl disable NetworkManager.service
 systemctl stop NetworkManager.service
 
+
+
 Enable the network service.
 oVerify the runlevel status of the network service & turn it on if necessary:
 chkconfig –-list network;
 chkconfig --level 345 network on
 
+
+
+
 verify the service status of the network service
 systemctl status network; service network status
+  turnit down and up
+    ifdown ens##
+    ifup ens##
+
 
 turn it on if necessary
 systemctl start network (and enable it if necessary)
 
 lspci –v diskplays kernel drivers in use
 lsmod output displays driver is loaded thought verification
+
+
+
+View interfaces like MAC address ip address and tcp
+--ip addr show
+
+
+
+View the routing table
+--ip route show
+
+Used in order
+systemctl disable NetworkManager.service
+systemctl stop NetworkManager.service
+chkconfig –-list network;
+chkconfig --level 345 network on
+ifdown ens34
+ifup ens34
+ip route show
+ip route show
