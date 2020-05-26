@@ -1,0 +1,42 @@
+!!Objectives
+!!To setup networking for the lab environment
+!!Lab Outcome
+!!To configure dynamic (DHCP) and static network IP addressing
+
+Your VMware machine: setup of two network adapters
+
+Verify VMWare Network settings: In the VMware Virtual Network Settings verifythat one VMnet
+is associated with NAT and will share the Internet (on most laptopsthis is the wireless card)
+and the other VMnet is bridged to the onboard physicalnetwork card: this card has to be
+connected to the RED network which is a closed.
+
+Verify VMware machines settings: Verify that each of your virtual machines hasthe two Ethernet 
+adapters described above added to the hardware configuration. Ifnot, add missing VMNets. Verify
+that both network adapters in each virtual machineare “custom linked” to the VMnets set up in
+the Virtual Network Editor: Typically wemake the first network adapter the “Blue” network (internet),
+and the second net-work adapter to the “Red” network.
+
+The account name is user8213 and the password is user8213.
+useradd user8213
+passwd user8213
+
+Make the user an “administrator” which adds the user to the “wheel” group facili-tating sudo (root access)
+usermod -aG wheel user8213
+
+Disable the NetworkManager service.
+systemctl disable NetworkManager.service
+systemctl stop NetworkManager.service
+
+Enable the network service.
+oVerify the runlevel status of the network service & turn it on if necessary:
+chkconfig –-list network;
+chkconfig --level 345 network on
+
+verify the service status of the network service
+systemctl status network; service network status
+
+turn it on if necessary
+systemctl start network (and enable it if necessary)
+
+lspci –v diskplays kernel drivers in use
+lsmod output displays driver is loaded thought verification
