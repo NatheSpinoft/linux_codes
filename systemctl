@@ -28,3 +28,25 @@ ON
 [root@localhost cst8213]# systemctl stop network
 [root@localhost cst8213]# systemctl is-active network >& /dev/null || echo "OFF"
 OFF
+
+
+
+[root@localhost cst8213]# systemctl is-active network
+inactive
+[root@localhost cst8213]# systemctl is-active network || echo "OFF"
+inactive
+OFF
+[root@localhost cst8213]# systemctl start network
+[root@localhost cst8213]# systemctl is-active network || echo "OFF"
+active
+[root@localhost cst8213]# systemctl is-failed network || echo "OFF"
+active
+OFF
+[root@localhost cst8213]# systemctl stop network || echo "OFF"
+[root@localhost cst8213]# systemctl is-active network || echo "OFF"
+inactive
+OFF
+[root@localhost cst8213]# systemctl is-failed network || echo "OFF"
+inactive
+OFF
+[root@localhost cst8213]# 
