@@ -1,0 +1,10 @@
+$Service management?	Network service Management
+$Managing the network service?	System ctl <ommand> network or service network <command>
+$Managing individual interfaces?	Ifup | ifdown interface
+$Service Management?	Network Configuration
+$The network service sources scripts to setup?	/etc/sysconfig/network-scripts
+	
+$Interface Configuration?	Interfaces
+$Interface-specific network configuration files?	/etc/sysconfig/network-scripts/ifcfg-interface
+$Interface-specific network configuration options?	Examples ip address, subnet mask listed variables in /usr/share/doc/initscripts-x.y.z/sysconfig.txt
+$Interface setup options?	Static configurations - IP parameters supplied manually, Dynamic - Ip configurations sipplied by dhcp which Centos DHCP client is dhclient. Lease is stored in /var/lib/dhclient
