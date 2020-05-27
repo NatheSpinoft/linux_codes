@@ -1,0 +1,36 @@
+$system logger?	Standard mechanism to centrally log messages from different apps. Many services will provide both system and service-specific logging
+$How does a rsyslog aware process logs?	Sends log data to the rsyslogd service
+$How does rsyslog manage logs to its appropriate destination?	Rsyslog consults its configuration file in rsyslog.conf and dispatches each message to its appropriate destination in the log file locating /var/log
+$location of rsyslogd?	/etc/rsyslog.conf
+$Basic configuration format?	Facility.priority action
+$What is a facility in the selector?	The program that is sending a log message
+$What is the level in the selector?	The severity level
+$What facilities use security?	Auth/authpriv which hold security and authorization related commands such ass passwd, su and login
+$What facility holds mail?	Mail
+$What facility does local0-7 hold?	Usually used by services
+$What facility uses daemons?	System daemons
+$What facility holds user processes?	User (applications or scripts)
+$what does none indicate in a selector?	Indicates no loggine example *.info;cron.none
+$What are the priorities in order from high to low?	Emerg, alert, crit, err, warn, notice, info and debug
+$What does placing a . Signify?	Includes current and all higher priorities
+$What does .= signify?	This priority only
+$What does .! Signify?	Except all priorities including and higher
+$What does filename represent in the actions field?	Writes the message to the file located on the local system using absolute path.
+$What does @host[:port] signify?	Forwards the message to rsyslogd on host using hostname or IP address using UDP 14. If the host is not available the message is lost
+$What does user1,user2...,usern signify?	Writes messages to specified users in stdout
+$What does * signify?	Writes messages to all users currently loggine in
+$What does ^program mean?	Sends messages to program
+$Where do the logs go under the kern.* selector?	/dev/console
+$How do you list in /var/log/messages all except mail, authpric and cron of level info or higher?	*.info;mail.none;authpriv.none;cron.none
+$How do you list the authpric file to have restricted access?	Authpriv.*   /var/log/secure
+$Where do you list all mail messages in one place?          	/var/log/maillog
+$Where do the boot logs go?	/var/log/boot.log
+$Where do the cron logs go?	/var/log/cron
+$Which directroy do the common log files go? 	/var/log
+$Boot.log shows?	Output of system startup scripts
+$What does dmesg show?	Dump of kernel message buffer to the point of last boot
+$What is /usr/sbin/logrotate?	It rotares log files based on size, runs as a daily cron job
+$What is /use/gin/logger?	Submits loggin info from the shell cripts or from the prompt
+$What is the syntax of the logger?	Logger [-p facility.level [-t tag] message
+$What does tail -f logfile do?	Views running log file
+$What command do you use after editing the config for rsyslogd?	Systemctl
