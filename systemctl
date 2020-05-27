@@ -1,0 +1,30 @@
+[root@localhost cst8213]# systemctl start network
+[root@localhost cst8213]# systemctl status network
+● network.service - LSB: Bring up/down networking
+   Loaded: loaded (/etc/rc.d/init.d/network; bad; vendor preset: disabled)
+   Active: active (running) since Wed 2020-05-27 14:32:42 EDT; 7s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 16439 ExecStop=/etc/rc.d/init.d/network stop (code=exited, status=0/SUCCESS)
+  Process: 16735 ExecStart=/etc/rc.d/init.d/network start (code=exited, status=0/SUCCESS)
+    Tasks: 1
+   CGroup: /system.slice/network.service
+           └─16928 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient-e839b48f-12bb-41c4-ab00-04e4e2f7a9f9-ens33.lease -pf /var/run/dhcl...
+
+May 27 14:32:36 pint0041-SRV.example69.lab systemd[1]: Starting LSB: Bring up/down networking...
+May 27 14:32:36 pint0041-SRV.example69.lab network[16735]: Bringing up loopback interface:  [  OK  ]
+May 27 14:32:36 pint0041-SRV.example69.lab network[16735]: Bringing up interface ens33:
+May 27 14:32:36 pint0041-SRV.example69.lab dhclient[16876]: DHCPREQUEST on ens33 to 255.255.255.255 port 67 (xid=0x8d2b9be)
+May 27 14:32:36 pint0041-SRV.example69.lab dhclient[16876]: DHCPACK from 192.168.208.254 (xid=0x8d2b9be)
+May 27 14:32:38 pint0041-SRV.example69.lab dhclient[16876]: bound to 192.168.208.136 -- renewal in 704 seconds.
+May 27 14:32:38 pint0041-SRV.example69.lab network[16735]: Determining IP information for ens33... done.
+May 27 14:32:38 pint0041-SRV.example69.lab network[16735]: [  OK  ]
+May 27 14:32:42 pint0041-SRV.example69.lab network[16735]: Bringing up interface ens34:  [  OK  ]
+May 27 14:32:42 pint0041-SRV.example69.lab systemd[1]: Started LSB: Bring up/down networking.
+[root@localhost cst8213]# systemctl is-active network
+active
+[root@localhost cst8213]# systemctl is-active network >& /dev/null | echo "ON"
+ON
+[root@localhost cst8213]# systemctl is-active network >& /dev/null || echo "OFF"
+[root@localhost cst8213]# systemctl stop network
+[root@localhost cst8213]# systemctl is-active network >& /dev/null || echo "OFF"
+OFF
