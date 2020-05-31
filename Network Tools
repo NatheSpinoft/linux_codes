@@ -1,0 +1,27 @@
+$Netstat and SS? Are used to verify service connections
+$Options that are usesful with SS and netstat? -tpan
+$Listening in all ports? ss -tpan | grep ":22" LISTEN 0 128 *:22 *:* users:((“sshd,1245,3))
+$Established connection with a client? ESTAB 0 0 172.16.30.101:22 172.16.31.101:49194 users:(( “sshd”,5018,3))
+$nc -vl [host] port? ont the server
+$nc -v port? on the client
+$nc vl localhost 1234 [on server] and on client nc 172.16.30.69 1234? connects to the loopback
+$iptables -A input? add rule for incoming traffic
+$iptables -s 172.16.31? originating from source ip
+$iptables -p tcp --dport 49999? arriving on port 49999
+$iptables -j REJECT? reject or accept traffic
+$iptables -L? list
+$iptables -F? flush
+$nc -vkl 49999? verbose keep open and listen on all interfaces for the port 49999
+$IPtables-save > Fwrules.arni7777? Saves the rules to a file
+$/etc/sysconfig/iptables? location of saved rules
+$iptables-restore < FWrules.arni7777? resotres iptables
+$tcpdump -D? Lists interfaces
+$tcpdump -i interface? specify interface to listen on
+$tcpdump -d? numberic display of hosts/services
+$tcpdump -q? less verbose
+$tcpdump -X? print packet data in hex & ASCII
+$tcpdump -ttt? include readable time stamp
+$tcpdump -w file? dump data into file
+$tcpdump -r? read data from file
+$tcpdump –i enoxxxxxxxx –qnX -tttt host 172.16.30.167 and port 22? Capture packets received on given interface 
+from/to server IP address and from/to given port.
