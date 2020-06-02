@@ -1,0 +1,55 @@
+$Firewall filter? filters network traffic coming thouch a network interface
+$Network Firewall? Filters traffic between two networks usually there are differing trust levels such as private, DMZ, public
+$Host Firewall? filters traffic between the host and a network
+$Stateless firewall function? Tracks and makes decisions based on a network connection
+$Stateful firewall function? tracks and makes decisions baseed on the state of a network connection packet filtering
+$What is DMZ? demilitarized zone is a physical or logical subnetwork that is in between an untrusted network (internet) and internal resources
+$Purpose of DMZ? Adds an additional layer of security to an organization's LAN, while the rest of the network is firewalled. Perimeter Firewall
+$Stateless firewalls? Are typically faster and perform better under heavier traffic loads, since it does not look into what stage a connection is in
+such as open, open sent, synchronized, synchronization, acknowledge, or established
+$Stateful firewalls? Are better at identifying unauthorized and forged communications. It's counterpart evaluates packets statically and does not keep track of the state of network connections
+$iptables? cli based configuration tool for packet filtering in which actual packet filtering is implemented in kernal space. Packet filtering Network address translation, packet mangling and other
+$Terminology used in iptables? table chain, rule, match criteria, target, default policy
+$iptables tables contain? the filter, nat, mangle, and raw
+$iptables> filter? the filtering component in the tables that access control decisions are made for packets traveling, to , from, and through linux
+$iptables> nat? used for network address translation in which firewalls can be set up for NAT which is a different security feature.
+$iptables> manger? packets are mangled/modified accoring to the rules in the mangle table which is used in NAT
+$iptables> raw? The raw tables is used to exempt cetain network packets from something called connection tracking, which is important in NAT and virtualization
+$netfilter/iptables chains? categorizes network packets into categories called chains, there are five chains: input, forward, output, prerouting, postrouting
+$iptables chains> input? network packets coming into the Linux server
+$iptables chains> forward? network packets coming into the linux server that are to be routed elsewhere
+$iptables chains> output? network packets coming out of the linux server
+$iptables chains> prerouting? Used by NAT, for modifying network packets when they come into the Linux server
+$iptables chains> postrouting? Used by NAT, for modifying network packets when they exit out of the linux server
+$iptables Filter chain? Chains available input, forward, output
+$iptables NAT chain? Chains available prerouting, output, postrouting
+$iptables mangle chain? Chains available input, forward, prerouting, output, postrouting
+$iptables raw chain? Chains available prerouting, output
+$iptables security chain? Chains available input, forward, output
+$Network packet components in iptables? source ip address, destination ip address, network protocol. inbound port, outbound port, network state
+$Network packet rules? Accept, Reject, Drop (similar to reject, just does not receive a message)
+$Default policy? contains a default rule called default policy, containing a target but no matching criteria
+$RHEL 6- iptables commands? service iptables start/stop
+$RHEL 7+ iptables commands? systemctl start/stop firewalld.service
+$iptables rules ip address source/destination? -s IP, -d IP
+$iptables rules interface input/output? -i if, -o if
+$iptables rules protocol? -p {tcp|udp|icmp}
+$iptables rules source/destination port? --sport port, --dport port
+$iptables rules target rules? -j target{Accept|drop|reject}
+$iptables -h? to display command usage
+$iptables -L [chain]? to list the rules
+$iptables -F [chain]? to delete all rules
+$iptables -P chain target? to change the default policy of chain
+$iptables -A chain rule? to append rule to chain
+$iptables -D chain {rule|rulenum}? to delete rule in chain based on rule specs or rule number #--rule-number
+$iptables -I chain [rulenum] rule? to insert rule in chain by default in first position
+$iptables -R chain rulenum rule? overwrite rule given by rule number with new rule in chain
+$summary>iptables contains multiple? tables
+$summary>packet filtering is done in the? filter table
+$summary>Each table conains multiple built-in? chains
+$summary>the built in chains for the filter table are? input, output, forward
+$summary>these chains can be setup? User-defined chains
+$summary>each chain might contain one or more? rules
+$summary>a rule includes one or more __ against which each packet is compared and a __ that is executed once a match is found? match criteria, target action
+$summary>rules are examined for each packet in sequence until the first match is found? chain
+$summary>Each chain haas a __ that applies to any packet that does not match any rule in the chain? default policy
