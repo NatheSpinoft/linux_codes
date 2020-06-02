@@ -1,0 +1,18 @@
+$Cyrptographic method=cryptographic keyed algorithm, result, main objective, keyed, reversible? Message authentication code, integrity not confidential, yes (one), no
+$Cyrptographic method=Hash function, result, main objective, keyed, reversible? Message digest, integrity iff digest is encrypted;not confidential, no, no
+$Cyrptographic method=Hash function keyed, result, main objective, keyed, reversible? HMAC, integrity;not confidential, Yes (one), no
+$Cyrptographic method=Encryption symmetric, result, main objective, keyed, reversible? encrypted message, not integrity;confidential, Yes (one), yes
+$Cyrptographic method=Encryption, public or asymmetric, result, main objective, keyed, reversible? Encrypted message digital signature key distribution, source integrity;confidential(costly); not data integrity, Yes (paired), yes
+$The CIA Triad, model? Confidential, integrity, availability
+$CIA> confidentiality? refers to: data confidentiality, personal privacy; protect against unauthorized disclosure of information; counter measure: authentication, cyrptography and other
+$CIA> Integrity? refers to: data integrity, system integrity, source integrity (authenticity, nonrepudiation);protect against data alteration (modification, destruction), unexpected
+system behaviour & repudiation; counter measure: authentication, AV SW, cryptography, other
+$CIA> Availability? refers to: timely access to services; protect against denial of service attacks; counter measure: access control, cryptography, other
+$What are the components of cryptography? plaintext, cipher, Key, Ciphertext
+$Cryptography> plaintext? data to be encrypted
+$Cryptography> Cipher? algorithm public domain to encrypt or decrypt
+$Cryptography> Key? Secret ingredient
+$Cryptography> ciphertext? Encrypted data
+$Cryptography> Encrypted message? data confidentiality
+$Cryptography> message authentication codes? (MAC, HMAC) [data integrity]
+$Cryptography> digital signature? source integrity
