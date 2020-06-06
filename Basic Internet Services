@@ -1,0 +1,23 @@
+$User authentication using passwords? simple to setup and verify that sse sever is working as intended
+$User authentication using public keys? this is a more secure setup a public key is required. No password is needed by user the client and server exchange keys for authentication
+$symmetric? shared single key for encryption or decryption. Both sender and receiver have to have a copy of the key and relies on a secure secret key
+$asymmetric? Public key relies on a key pair where a key is public and the other is a private key only known to to private users
+$Which key provides confidentiality? public key
+$files in server system> Private server key? etc/ssh/ssh_host_rsa_key
+$files in server system> Public server key? /etc/ssh/ssh_host_rsa_key.pub
+$files in server system> public key of each ssh user? ~/.ssh/authorized_keys
+$files in client system> Private server key? ~/.ssh/id_rsa_key
+$files in client system> Public server key? ~/.ssh/id_rsa_key.pub
+$files in client system> public key of each ssh user? ~/.ssh/known_hosts
+$Most configuration files for client, server, and keys are located in? /etc/ssh
+$The server service is named? sshd
+$The server configuration file is:? /etc/ssh/sshd_config.
+$The client utility used to connect to an SSH server is? ssh
+$PasswordAuthentication is in? sshd_config
+$grep PermitRootLogin? /etc/ssh/sshd_config
+$restarting sshd? RHEL	service sshd start, Fedora	systemctl start sshd.service, Ubuntu	service ssh start
+$Setting up SSH to use public key authentication in addition to password based?RSA Authentication yes, pubkey authentication yes
+$Public keys stored?~/.ssh/id_rsa.pub and private ~/.ssh/id_rsa
+$Function ssh-copy-id? does all the necessary copying to authorized files
+$Listen address function? in sshd_config to bind ip addresses to listen
+
